@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:match*",
-      "destination": "yes-play-music-kappa-one.vercel.app*"
+      "destination": "https://netease-cloud-music-api-git-master-hemikeo.vercel.app/*"
     }
   ]
 }
