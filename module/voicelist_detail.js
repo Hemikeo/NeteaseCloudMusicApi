@@ -1,12 +1,11 @@
 module.exports = (query, request) => {
-  query.cookie.os = 'ios'
-  query.cookie.appver = '8.20.21'
+  const data = {
+    id: query.id,
+  }
   return request(
     'POST',
-    `https://music.163.com/api/artist/head/info/get`,
-    {
-      id: query.id,
-    },
+    `https://interface.music.163.com/weapi/voice/workbench/voicelist/detail`,
+    data,
     {
       crypto: 'weapi',
       cookie: query.cookie,

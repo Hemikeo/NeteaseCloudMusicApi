@@ -1,14 +1,13 @@
+// 每日推荐歌曲-不感兴趣
 module.exports = (query, request) => {
-  query.cookie.os = 'ios'
-  query.cookie.appver = '8.20.21'
   const data = {
-    userId: query.uid,
-    songId: query.sid,
-    adjustSongId: query.asid,
+    resId: query.id, // 日推歌曲id
+    resType: 4,
+    sceneType: 1,
   }
   return request(
     'POST',
-    `https://music.163.com/api/cloud/user/song/match`,
+    `https://music.163.com/weapi/v2/discovery/recommend/dislike`,
     data,
     {
       crypto: 'weapi',

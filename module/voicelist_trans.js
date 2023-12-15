@@ -1,14 +1,12 @@
 module.exports = (query, request) => {
-  query.cookie.os = 'ios'
-  query.cookie.appver = '8.20.21'
   const data = {
-    userId: query.uid,
-    songId: query.sid,
-    adjustSongId: query.asid,
+    position: query.position,
+    programId: query.programId,
+    radioId: query.radioId,
   }
   return request(
     'POST',
-    `https://music.163.com/api/cloud/user/song/match`,
+    `https://interface.music.163.com/weapi/voice/workbench/radio/program/trans`,
     data,
     {
       crypto: 'weapi',

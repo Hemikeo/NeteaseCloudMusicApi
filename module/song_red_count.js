@@ -1,17 +1,19 @@
-// 用户贡献条目、积分、云贝数量
-const crypto = require('crypto')
+// 歌曲红心数量
+
 module.exports = (query, request) => {
-  const data = {}
+  const data = {
+    songId: query.id,
+  }
   return request(
     'POST',
-    `https://music.163.com/weapi/rep/ugc/user/devote`,
+    `https://interface3.music.163.com/eapi/song/red/count`,
     data,
     {
       crypto: 'eapi',
       cookie: query.cookie,
       proxy: query.proxy,
+      url: '/api/song/red/count',
       realIP: query.realIP,
-      url: '/api/rep/ugc/user/devote',
     },
   )
 }
